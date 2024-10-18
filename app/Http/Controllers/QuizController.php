@@ -2,16 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Question;
+use Exception;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
 {
+    function form()
+    {
+        $questions = Question::all();
+        return view('form', compact('questions'));
+    }
+
     function submit(Request $request)
     {
         $request->validate([
-            'h-captcha-response' => 'required|captcha',
+            'h-captcha-response' => 'required'
         ]);
-        dd($request);
-        die;
+        try {
+            //
+        } catch (Exception $e) {
+            return redirect()->back()->withInput($request->all());
+        }
     }
 }

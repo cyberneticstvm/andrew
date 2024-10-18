@@ -1,23 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Lifestyle Design Quiz</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('/assets/img/apple-icon.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('/assets/img/favicon.png') }}" />
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+    <!-- CSS Files -->
+    <link href="{{ asset('/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/assets/css/material-bootstrap-wizard.css') }}" rel="stylesheet" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="{{ asset('/assets/css/demo.css') }}" rel="stylesheet" />
 </head>
 
 <body>
-    <div>
-        <form action="{{ route('submit') }}">
-            <input type="text" name="txt">
-            {!! Captcha::display() !!}
-            @error('h-captcha-response')
-            <small class="text-danger">{{ $errors->first('h-captcha-response') }}</small>
-            @enderror
-            <button type="submit">Submit</button>
-        </form>
+    <div class="image-container set-full-height" style="background-image: url('{{ asset('/assets/img/bg.png') }}')">
+        <!--   Creative Tim Branding   -->
+        <a href="http://creative-tim.com">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="{{ asset('/assets/img/favicon.png') }}">
+                </div>
+                <div class="brand">
+                    Andrew Lord
+                </div>
+            </div>
+        </a>
+
+        <!--  Made With Material Kit  -->
+        <a href="http://demos.creative-tim.com/material-kit/index.html?ref=material-bootstrap-wizard" class="made-with-mk">
+            <div class="brand">MK</div>
+            <div class="made-with">Made with <strong>Material Kit</strong></div>
+        </a>
+
+        <!--   Big container   -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!--      Wizard container        -->
+                    <div class="wizard-container">
+                        <div class="card wizard-card" data-color="purple" id="wizard">
+                            <form action="{{ route('submit') }}" method="post">
+                                @csrf
+                                <!--        You can switch " data-color="rose" "  with one of the next bright colors: "blue", "green", "orange", "purple"        -->
+
+                                <div class="wizard-header">
+                                    <h3 class="wizard-title">
+                                        Lifestyle Design Quiz
+                                    </h3>
+                                    <h5>This information will let us know more about yourself.</h5>
+                                </div>
+                                <div class="wizard-navigation">
+                                    <ul>
+                                        @forelse($questions as $key => $question)
+                                        <li><a class="asd" href="#{{ $question->qcode }}" data-toggle="tab" data-qid="{{ $question->id }}">{{ $question->qcode }}</a></li>
+                                        @empty
+                                        @endforelse
+                                        <li><a class="asd" href="#26" data-toggle="tab" data-qid="26">q26</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-content">
+                                    @forelse($questions as $key => $question)
+                                    <div class="tab-pane" id="{{ $question->qcode }}">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="info-text fw-bold">{{ $question->header ?? '' }}</h4>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <h4 class="fw-bold">{{ $question->question }}</h4>
+                                                @if($key == 1)
+                                                <i class="fa fa-globe fa-lg text-secondary"></i>
+                                                @endif
+                                                @if($question->qcode == 'q9')
+                                                <div class="sortable-list">
+                                                    <ul class="sortable" id="sortable">
+                                                        @forelse($question->options as $key1 => $option)
+                                                        <li draggable="true" data-optval="{{ $option->id }}">
+                                                            <h4><span class="dragNum">{{ $key1 + 1 }}. </span>{{ $option->option }}</h4>
+                                                            <input type="hidden" name="dragval[]" value="{{ $option->id }}" class="dragVal {{ $question->qcode }}" data-next="{{ $option->next_question }}" data-prev="{{ $option->prev_question }}" />
+                                                        </li>
+                                                        @empty
+                                                        @endforelse
+                                                    </ul>
+                                                </div>
+                                                @else
+                                                <div class="">
+                                                    @forelse($question->options as $key2 => $option)
+                                                    <h4><input type="{{ $question->input }}" name="{{ $question->qcode.'[]' }}" value="{{ $option->value }}" class="{{ $question->qcode }}" data-next="{{ $option->next_question }}" data-prev="{{ $option->prev_question }}"> {{ $option->option }}</h4>
+                                                    @empty
+                                                    @endforelse
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @empty
+                                    @endforelse
+                                    <div class="tab-pane" id="26">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="info-text fw-bold">Thank you. Where can we send your results?</h4>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <h4 class="fw-bold text-center">Your Details</h4>
+                                                <div class="col-sm-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">person</i>
+                                                        </span>
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Your Name</label>
+                                                            <input name="name" type="text" class="form-control">
+                                                            @error('name')
+                                                            <small class="text-danger">{{ $errors->first('name') }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">email</i>
+                                                        </span>
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Your Email</label>
+                                                            <input name="email" type="email" class="form-control">
+                                                            @error('email')
+                                                            <small class="text-danger">{{ $errors->first('email') }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-sm-offset-4 mt-3">
+                                                    {!! Captcha::display() !!}
+                                                    @error('h-captcha-response')
+                                                    <small class="text-danger">{{ $errors->first('h-captcha-response') }}</small>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wizard-footer">
+                                    <div class="pull-right">
+                                        <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next' value='Next' />
+                                        <input type='button' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish' value='Finish' />
+                                    </div>
+                                    <div class="pull-left">
+                                        <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!-- wizard container -->
+                </div>
+            </div> <!-- row -->
+        </div> <!--  big container -->
+
+        <div class="footer">
+            <div class="container text-center">
+                <a href="https://lifestyledesignquiz.com/" target="_blank">Lifestyle Design Quiz</a>.
+            </div>
+        </div>
     </div>
+
 </body>
+<!--   Core JS Files   -->
+<script src="{{ asset('/assets/js/jquery-2.2.4.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/js/jquery.bootstrap.js') }}" type="text/javascript"></script>
+
+<!--  Plugin for the Wizard -->
+<script src="{{ asset('/assets/js/material-bootstrap-wizard.js') }}"></script>
+
+<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+<script src="{{ asset('/assets/js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('/assets/js/drag-and-drop.js') }}"></script>
 
 </html>
