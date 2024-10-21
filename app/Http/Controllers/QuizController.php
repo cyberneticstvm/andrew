@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Question;
 use App\Models\Quiz;
+use App\Models\QuizLifeStyleDomain;
 use App\Models\Strength;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller
 {
@@ -50,7 +54,6 @@ class QuizController extends Controller
                     endforeach;
                 endif;
             endforeach;
-
             $sum = array_sum($category);
             $input['c_per'] = ($category['C'] > 0) ? ceil((100 / $sum) * $category['C']) : 0;
             $input['i_per'] = ($category['I'] > 0) ? ceil((100 / $sum) * $category['I']) : 0;
@@ -59,11 +62,77 @@ class QuizController extends Controller
             $input['a_per'] = ($category['A'] > 0) ? ceil((100 / $sum) * $category['A']) : 0;
             $input['category'] = array_search(max($category), $category);
             $input['outcome'] =  array_search(max($outcome), $outcome);
-            $quiz = Quiz::create($input);
+            $quiz = DB::transaction(function () use ($request, $input) {
+                $quiz = Quiz::create($input);
+                foreach ($request->dragval as $key2 => $item):
+                    $data[] = [
+                        'quiz_id' => $quiz->id,
+                        'option_id' => $item,
+                        'created_at' => Carbon::now(),
+                        'updated_at' => Carbon::now(),
+                    ];
+                endforeach;
+                QuizLifeStyleDomain::insert($data);
+                return $quiz;
+            });
             $strength = Strength::where('category', $quiz->category)->first();
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }
         return redirect()->route('quiz.thankyou')->with(['quiz' => $quiz, 'strength' => $strength]);
+    }
+
+    function report(string $id)
+    {
+        $quiz = Quiz::findOrFail($id);
+        $strength = Strength::where('category', $quiz->category)->firstOrFail();
+        $rgb_c = DB::table('strengths')->where('category', 'C')->first()->rgb;
+        $rgb_i = DB::table('strengths')->where('category', 'I')->first()->rgb;
+        $rgb_o = DB::table('strengths')->where('category', 'O')->first()->rgb;
+        $rgb_v = DB::table('strengths')->where('category', 'V')->first()->rgb;
+        $rgb_a = DB::table('strengths')->where('category', 'A')->first()->rgb;
+        $chart = "{
+            type: 'bar',
+            data: {
+                datasets: [
+                {
+                    label: 'Compassion', 
+                    data: [" . $quiz->c_per . "],
+                    backgroundColor: 'rgb(" . $rgb_c . ")'
+                },
+                {
+                    label: 'Innovation', 
+                    data: [" . $quiz->i_per . "],
+                    backgroundColor: 'rgb(" . $rgb_i . ")'
+                },
+                {
+                    label: 'Optimism', 
+                    data: [" . $quiz->o_per . "],
+                    backgroundColor: 'rgb(" . $rgb_o . ")'
+                },
+                {
+                    label: 'Vision', 
+                    data: [" . $quiz->v_per . "],
+                    backgroundColor: 'rgb(" . $rgb_v . ")'
+                },
+                {
+                    label: 'Diligence', 
+                    data: [" . $quiz->a_per . "],
+                    backgroundColor: 'rgb(" . $rgb_a . ")'
+                }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: false,
+                    text: 'Your Profile Breakdown',
+                },
+            },
+        }";
+        $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart'));
+        return $pdf->stream($quiz->id . '.pdf');
     }
 }

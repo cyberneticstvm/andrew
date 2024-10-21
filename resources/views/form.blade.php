@@ -51,7 +51,7 @@
                     <!--      Wizard container        -->
                     <div class="wizard-container">
                         <div class="card wizard-card" data-color="purple" id="wizard">
-                            <form action="{{ route('submit') }}" method="post">
+                            <form action="{{ route('submit') }}" method="post" id="QuizForm">
                                 @csrf
                                 <!--        You can switch " data-color="rose" "  with one of the next bright colors: "blue", "green", "orange", "purple"        -->
 
@@ -184,7 +184,7 @@
                                 <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next' value='Next' />
-                                        <input type='submit' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish' value='Finish' />
+                                        <button type='submit' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish'>Finish</button>
                                     </div>
                                     <div class="pull-left">
                                         <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />

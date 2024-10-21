@@ -3,7 +3,7 @@ $(function(){
 
     $('form').submit(function() {
         $(this).find(".btn-finish").attr("disabled", true);
-        $(this).find(".btn-finish").html("Loading...<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>");
+        $(this).find(".btn-finish").html("Submitting...<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>");
     });
 });
 
