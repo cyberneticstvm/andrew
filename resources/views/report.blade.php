@@ -183,7 +183,7 @@
                 @forelse($strengths as $key => $s)
                 <tr>
                     <td><img src="./assets/bgs/{{ $s->img_name1 }}" width="100%" /></td>
-                    <td width="75%" class="text-justify" style="padding-left: 10px;">{{ $s->description }}</td>
+                    <td width="75%" class="text-justify" style="padding-left: 10px;">{!! $s->description !!}</td>
                 </tr>
                 @empty
                 @endforelse
