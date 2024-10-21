@@ -29,14 +29,10 @@ $(document).ready(function(){
     // Code for the Validator
     var $validator = $('.wizard-card form').validate({
 		  rules: {
-		    firstname: {
-		      required: true,
-		      minlength: 3
-		    },
-		    lastname: {
-		      required: true,
-		      minlength: 3
-		    },
+		    name: {
+                required: true,
+                minlength: 3,
+              },
 		    email: {
 		      required: true,
 		      minlength: 3,
@@ -99,9 +95,11 @@ $(document).ready(function(){
             // If it's the last tab then hide the last button and show the finish instead
             if($current >= $total) {
                 $($wizard).find('.btn-next').hide();
+                $($wizard).find('.btn-previous').hide();
                 $($wizard).find('.btn-finish').show();
             } else {
                 $($wizard).find('.btn-next').show();
+                $($wizard).find('.btn-previous').show();
                 $($wizard).find('.btn-finish').hide();
             }
 

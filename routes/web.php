@@ -7,5 +7,8 @@ Route::middleware(['web'])->group(function () {
     Route::prefix('')->controller(QuizController::class)->group(function () {
         Route::get('/', 'form')->name('form');
         Route::post('/', 'submit')->name('submit');
+        Route::get('/thankyou', function () {
+            return view('thankyou');
+        })->name('quiz.thankyou');
     });
 });

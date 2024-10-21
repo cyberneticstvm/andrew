@@ -27,7 +27,7 @@
 <body>
     <div class="image-container set-full-height" style="background-image: url('{{ asset('/assets/img/bg.png') }}')">
         <!--   Creative Tim Branding   -->
-        <a href="http://creative-tim.com">
+        <a href="https://www.andrewlord.com.au/" target="_blank">
             <div class="logo-container">
                 <div class="logo">
                     <img src="{{ asset('/assets/img/favicon.png') }}">
@@ -39,7 +39,7 @@
         </a>
 
         <!--  Made With Material Kit  -->
-        <a href="http://demos.creative-tim.com/material-kit/index.html?ref=material-bootstrap-wizard" class="made-with-mk">
+        <a href="#" class="made-with-mk">
             <div class="brand">MK</div>
             <div class="made-with">Made with <strong>Material Kit</strong></div>
         </a>
@@ -59,15 +59,25 @@
                                     <h3 class="wizard-title">
                                         Lifestyle Design Quiz
                                     </h3>
+                                    @session('success')
+                                    <div class="contact-form-success alert alert-success mt-4">
+                                        {{ session('success') }}
+                                    </div>
+                                    @endsession
+                                    @session('error')
+                                    <div class="contact-form-error alert alert-danger mt-4">
+                                        {{ session('error') }}
+                                    </div>
+                                    @endsession
                                     <h5>This information will let us know more about yourself.</h5>
                                 </div>
                                 <div class="wizard-navigation">
                                     <ul>
                                         @forelse($questions as $key => $question)
-                                        <li><a class="asd" href="#{{ $question->qcode }}" data-toggle="tab" data-qid="{{ $question->id }}">{{ $question->qcode }}</a></li>
+                                        <li><a class="asd" href="#{{ $question->qcode }}" data-toggle="tab" data-qid="{{ $question->id }}" data-input="{{ $question->input }}">{{ $question->qcode }}</a></li>
                                         @empty
                                         @endforelse
-                                        <li><a class="asd" href="#26" data-toggle="tab" data-qid="26">q26</a></li>
+                                        <li><a class="asd" href="#q26" data-toggle="tab" data-qid="26" data-input="text">q26</a></li>
                                     </ul>
                                 </div>
 
@@ -81,7 +91,25 @@
                                             <div class="col-sm-12">
                                                 <h4 class="fw-bold">{{ $question->question }}</h4>
                                                 @if($key == 1)
-                                                <i class="fa fa-globe fa-lg text-secondary"></i>
+                                                <div class="row">
+                                                    <div class="col-sm-1"></div>
+                                                    <div class="col-sm-2">
+                                                        <img src="{{ asset('/assets/img/heart.png') }}" class="img-fluid border border-info rounded-circle" width="100" />
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <img src="{{ asset('/assets/img/bulb.png') }}" class="img-fluid border border-info rounded-circle" width="100" />
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <img src="{{ asset('/assets/img/sun.png') }}" class="img-fluid border border-info rounded-circle" width="100" />
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <img src="{{ asset('/assets/img/explore.png') }}" class="img-fluid border border-info rounded-circle" width="100" />
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <img src="{{ asset('/assets/img/hand.png') }}" class="img-fluid border border-info rounded-circle" width="100" />
+                                                    </div>
+                                                    <div class="col-sm-1"></div>
+                                                </div>
                                                 @endif
                                                 @if($question->qcode == 'q9')
                                                 <div class="sortable-list">
@@ -108,7 +136,7 @@
                                     </div>
                                     @empty
                                     @endforelse
-                                    <div class="tab-pane" id="26">
+                                    <div class="tab-pane" id="q26">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <h4 class="info-text fw-bold">Thank you. Where can we send your results?</h4>
@@ -122,7 +150,7 @@
                                                         </span>
                                                         <div class="form-group label-floating">
                                                             <label class="control-label">Your Name</label>
-                                                            <input name="name" type="text" class="form-control">
+                                                            <input name="name" type="text" class="form-control" required>
                                                             @error('name')
                                                             <small class="text-danger">{{ $errors->first('name') }}</small>
                                                             @enderror
@@ -136,7 +164,7 @@
                                                         </span>
                                                         <div class="form-group label-floating">
                                                             <label class="control-label">Your Email</label>
-                                                            <input name="email" type="email" class="form-control">
+                                                            <input name="email" type="email" class="form-control" required>
                                                             @error('email')
                                                             <small class="text-danger">{{ $errors->first('email') }}</small>
                                                             @enderror
@@ -156,7 +184,7 @@
                                 <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next' value='Next' />
-                                        <input type='button' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish' value='Finish' />
+                                        <input type='submit' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish' value='Finish' />
                                     </div>
                                     <div class="pull-left">
                                         <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
@@ -189,5 +217,6 @@
 <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 <script src="{{ asset('/assets/js/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('/assets/js/drag-and-drop.js') }}"></script>
+<script src="{{ asset('/assets/js/script.js') }}"></script>
 
 </html>

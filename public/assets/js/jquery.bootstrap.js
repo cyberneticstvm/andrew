@@ -123,11 +123,15 @@ var bootstrapWizardCreate = function(element, options) {
 		return $navigation.find(baseItemSelector).index(e);
 	};
 	this.nextIndex = function() {
+		
 		let index = 0 //$navigation.find(baseItemSelector).index($activeTab) + 1;
 		let qid = $(".wizard-navigation ul>li.active").find('.asd').data('qid');
+		let input = $(".wizard-navigation ul>li.active").find('.asd').data('input');
 		if(qid == 9){
 			index = $(".dragVal:first").data('next') - 1;
 		}else{
+			if(!checkForm(qid, input))
+				return false
 			index = $(".q"+ qid +":checked").data('next') - 1;
 		}
 		return index;
