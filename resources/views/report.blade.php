@@ -142,6 +142,14 @@
         .chkpoint {
             margin-top: 3%;
         }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .text-justify {
+            text-align: justify !important;
+        }
     </style>
 </head>
 
@@ -167,20 +175,55 @@
             </div>
             <div class="profile"><img src="./assets/bgs/{{ $quiz->category.'.jpg' }}" class="img-fluid" height="100%" /></div>
         </div>
-        <div class="br"></div>
-        <div class="row">
-            <div class="col-md-12 mt-5">
-                <div class='head'>YOUR PROFILE BREAKDOWN</div>
-                <br>
-                <img src="https://quickchart.io/chart?width=350&height=150&c={{ urlencode($chart) }}" />
-            </div>
-            <div class="col-md-12 text-center">
-                <span style="height: 10px; background-color: #ff0066">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Compassion&nbsp;&nbsp;&nbsp;&nbsp;
-                <span style="height: 10px; background-color: #f79109">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Innovation&nbsp;&nbsp;&nbsp;&nbsp;
-                <span style="height: 10px; background-color: #ffcc00">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Optimism&nbsp;&nbsp;&nbsp;&nbsp;
-                <span style="height: 10px; background-color: #a8d18d">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Vision&nbsp;&nbsp;&nbsp;&nbsp;
-                <span style="height: 10px; background-color: #4472c8">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Diligence
-            </div>
+    </div>
+    <div class="row">
+        <div class="col page">
+            <div class='head'>THE STRENGTHS</div>
+            <table>
+                @forelse($strengths as $key => $s)
+                <tr>
+                    <td><img src="./assets/bgs/{{ $s->img_name1 }}" width="100%" /></td>
+                    <td width="75%" class="text-justify" style="padding-left: 10px;">{{ $s->description }}</td>
+                </tr>
+                @empty
+                @endforelse
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col page" style="width: 100%;">
+            <div class='head' style="width: 100%;">YOUR PROFILE</div>
+            <img src="data:image/png;base64, {{ $chart }}" />
+        </div>
+        <div class="col-md-12 text-center">
+            <span style="height: 10px; background-color: #ff0066">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Compassion&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="height: 10px; background-color: #f79109">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Innovation&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="height: 10px; background-color: #ffcc00">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Optimism&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="height: 10px; background-color: #a8d18d">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Vision&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="height: 10px; background-color: #4472c8">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Action
+        </div>
+    </div>
+    <div class="row">
+        <div class="col page">
+            <div class='head'>WHAT MATTERS MOST?</div>
+            <div class="mb-3">Based on your quiz responses, the lifestyle domains that matters most
+                to you right now are…</div>
+            <table>
+                @forelse($quiz->domains as $key => $item)
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="height: 50px; width: 50px; background: gainsboro; text-align:center; border-radius: 50; padding-bottom:2px">
+                        {{ $key + 1 }}
+                    </td>
+                    <td style="height: 50px; width: 100%; background: gainsboro; border-radius: 25; padding-left:25px; padding-right: 25px;">
+                        {{ $item->option->option }}
+                    </td>
+                </tr>
+                @empty
+                @endforelse
+            </table>
         </div>
     </div>
 </body>

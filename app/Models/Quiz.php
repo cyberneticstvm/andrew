@@ -38,4 +38,9 @@ class Quiz extends Model
         'q24' => 'array',
         'q25' => 'array',
     ];
+
+    public function domains()
+    {
+        return $this->hasMany(QuizLifeStyleDomain::class, 'quiz_id', 'id')->orderBy('id')->take(3);
+    }
 }

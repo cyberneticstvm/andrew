@@ -11,6 +11,8 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use QuickChart;
 
 class QuizController extends Controller
 {
@@ -86,15 +88,31 @@ class QuizController extends Controller
     {
         $quiz = Quiz::findOrFail($id);
         $strength = Strength::where('category', $quiz->category)->firstOrFail();
+        $strengths = Strength::all();
+        $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
+        $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
+        $chart = $this->generateChart($quiz);
+        $chart = base64_encode(file_get_contents($chart));
+        $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths'));
+        return $pdf->stream($quiz->id . '.pdf');
+        /*return view('report', compact('quiz', 'strength', 'chart', 'outcome', 'questions', 'strengths'));*/
+    }
+
+    function generateChart($quiz)
+    {
         $rgb_c = DB::table('strengths')->where('category', 'C')->first()->rgb;
         $rgb_i = DB::table('strengths')->where('category', 'I')->first()->rgb;
         $rgb_o = DB::table('strengths')->where('category', 'O')->first()->rgb;
         $rgb_v = DB::table('strengths')->where('category', 'V')->first()->rgb;
         $rgb_a = DB::table('strengths')->where('category', 'A')->first()->rgb;
-        $chart = "{
+        $chart = new QuickChart(array(
+            'width' => 700,
+            'height' => 200
+        ));
+        $chart->setConfig("{
             type: 'bar',
             data: {
-                datasets: [
+              datasets: [
                 {
                     label: 'Compassion', 
                     data: [" . $quiz->c_per . "],
@@ -116,7 +134,7 @@ class QuizController extends Controller
                     backgroundColor: 'rgb(" . $rgb_v . ")'
                 },
                 {
-                    label: 'Diligence', 
+                    label: 'Action', 
                     data: [" . $quiz->a_per . "],
                     backgroundColor: 'rgb(" . $rgb_a . ")'
                 }
@@ -125,14 +143,9 @@ class QuizController extends Controller
             options: {
                 legend: {
                     display: false
-                },
-                title: {
-                    display: false,
-                    text: 'Your Profile Breakdown',
-                },
+                }
             },
-        }";
-        $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart'));
-        return $pdf->stream($quiz->id . '.pdf');
+          }");
+        return $chart->getUrl();
     }
 }
