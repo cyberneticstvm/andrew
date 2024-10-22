@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ReportEmail;
 use App\Models\Outcome;
 use App\Models\Question;
 use App\Models\Quiz;
@@ -13,6 +14,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 use QuickChart;
 
 class QuizController extends Controller
@@ -79,6 +81,8 @@ class QuizController extends Controller
                 return $quiz;
             });
             $strength = Strength::where('category', $quiz->category)->first();
+            $data = ['name' => $quiz->name];
+            Mail::to('vijoysniit@gmail.com')->bcc('mail@cybernetics.me')->send(new ReportEmail($data));
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }
