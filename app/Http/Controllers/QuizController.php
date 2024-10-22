@@ -89,7 +89,7 @@ class QuizController extends Controller
             $chart = base64_encode(file_get_contents($chart));
             $data = ['name' => $quiz->name];
             $data['report'] = Pdf::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));
-            Mail::to('vijoysniit@gmail.com')->send(new ReportEmail($data));
+            Mail::to($quiz->email)->send(new ReportEmail($data));
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }
