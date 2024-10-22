@@ -51,6 +51,6 @@ class ReportEmail extends Mailable
      */
     public function attachments(): array
     {
-        return  [Attachment::fromData(fn() => $this->data['report']->output(), 'report.pdf')->withMime('application/pdf')];
+        return []; //  [Attachment::fromData(fn() => $this->data['report']->output(), 'report.pdf')->withMime('application/pdf')];
     }
 }
