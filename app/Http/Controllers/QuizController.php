@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Outcome;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\QuizLifeStyleDomain;
@@ -91,9 +92,10 @@ class QuizController extends Controller
         $strengths = Strength::all();
         $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
         $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
+        $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first()->label;
         $chart = $this->generateChart($quiz);
         $chart = base64_encode(file_get_contents($chart));
-        $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths'));
+        $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));
         return $pdf->stream($quiz->id . '.pdf');
         /*return view('report', compact('quiz', 'strength', 'chart', 'outcome', 'questions', 'strengths'));*/
     }

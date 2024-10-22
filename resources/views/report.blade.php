@@ -94,7 +94,7 @@
             text-align: center;
             color: #fff;
             padding: 15px 0 15px 0;
-            background-color: #0070C0;
+            background-color: #00004B;
             font-family: 'text';
             width: 60%;
             margin-top: 3%;
@@ -108,10 +108,9 @@
             text-align: center;
             color: #fff;
             padding: 15px 0 15px 0;
-            background-color: #0070C0;
+            background-color: #00004B;
             font-family: 'text';
             width: 60%;
-            margin-top: 10%;
             margin-left: 17%;
         }
 
@@ -120,6 +119,7 @@
             text-decoration: none;
             cursor: pointer;
             color: #fff;
+            font-size: large;
             letter-spacing: 1px;
         }
 
@@ -224,6 +224,68 @@
                 @empty
                 @endforelse
             </table>
+            <br /><br />
+            <div class='head text-center'>YOUR FOCUS FOR GROWTH IS ...</div>
+            <br />
+        </div>
+        <div class="profile text-center"><img src="./assets/bgs/{{ $quiz->category.'.jpg' }}" class="img-fluid" height="50%" /></div>
+        <div class="col page">
+            <p class="text-center">Does that sound right? Or is there something else?</p>
+            <p class="text-center">Do you have clarity on where you want to go and the steps you need to
+                take to get you there? Your optimistic outlook is a great strength!</p>
+            <p>Take your personalised mini training if you’re ready for more!</p>
+            <div class="call"><a href="https://www.blueprintlifecoaching.com.au/coaching/let-s-talk" target="_blank">GET THE TRAINING</a></div>
+        </div>
+    </div>
+    <div class="br"></div>
+    <div class="row">
+        <div class="col page">
+            <div class='head'>CLARITY QUESTIONS</div>
+            <p class="">Get deeper clarity on what your signature strength means to you and how you can apply it to reach your goals…</p>
+            <p class="">{{ $outcome->description }}</p>
+            <ul>
+                @forelse($questions as $key => $question)
+                <li class="">
+                    <p>{!! $question->question !!}</p>
+                </li>
+                @if($question->type != 'radio')
+                <hr class='solid'>
+                <hr class='solid'>
+                <hr class='solid'>
+                @endif
+                @empty
+                @endforelse
+            </ul>
+            <p class="text-center">Want to get more clarity?</p>
+            <div class="call1"><a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">BOOK A FREE DISCOVERY CALL</a></div>
+        </div>
+    </div>
+    <div class="br"></div>
+    <div class="row">
+        <div class="col page">
+            <div class='head'>CHECKPOINT</div>
+            <p>Here are some things to watch out for…</p>
+            <div class="chkpoint">
+                <p>{!! $strength->description1 !!}</p>
+            </div>
+        </div>
+        <div class="profile text-center"><img src="./assets/bgs/{{ $strength->img_name }}" class="img-fluid" width="100%" height="100%" /></div>
+    </div>
+    <div class="br"></div>
+    <div class="row">
+        <div class="col page">
+            <p>Hey {{ $quiz->name }},</p>
+            <p>Thanks for taking the quiz. I trust this report has helped you.</p>
+            <p>I know you’re here because you want to see breakthrough in your life. You’re here because the traditional way of doing things just hasn’t worked, or is going waaaayyy too slow to be OK</p>
+            <p>You have a strength of {{ $strength->outcome }} and you’re willing to work hard to get rapid gains in your {{ $focus }} – am I right?</p>
+            <p>That’s why I created this quiz. Because step 1 is getting to know what you actually want to change.</p>
+            <p>And then Step 2 is getting clear on your unique identity, but also working on your weak areas and any limiting beliefs that might be holding you back.</p>
+            <p>From there, you can design a strategy and start building the life of your dreams!.</p>
+            <p>There’s 2 ways you can do this.</p>
+            <p>1. Is on a discovery call with me. In about 20 minutes we can unpack the results of this quiz and tap into some smart actions that are going to move the needle for you right now.</p>
+            <p>2. Is by taking the mini training course that I have designed for you.</p>
+            <p>So now it’s up to you! Choose the best way forward and start to maximise your life!</p>
+            <div class="call1"><a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">DISCOVERY CALL</a><a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">MINI TRAINING</a></div>
         </div>
     </div>
 </body>
