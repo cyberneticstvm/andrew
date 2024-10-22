@@ -30,7 +30,7 @@ class QuizController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            //'h-captcha-response' => 'required'
+            'h-captcha-response' => 'required'
         ]);
         try {
             $input = $request->except(array('dragval', 'g-recaptcha-response', 'h-captcha-response'));
@@ -85,8 +85,9 @@ class QuizController extends Controller
             $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
             $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
             $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first()->label;
-            $chart = $this->generateChart($quiz);
-            $chart = base64_encode(file_get_contents($chart));
+            $chart = "";
+            /*$chart = $this->generateChart($quiz);
+            $chart = base64_encode(file_get_contents($chart));*/
             $data = ['name' => $quiz->name];
             $data['report'] = Pdf::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));
             Mail::to('vijoysniit@gmail.com')->bcc('mail@cybernetics.me')->send(new ReportEmail($data));
