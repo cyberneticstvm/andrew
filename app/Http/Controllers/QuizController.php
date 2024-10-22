@@ -30,7 +30,7 @@ class QuizController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'h-captcha-response' => 'required'
+            //'h-captcha-response' => 'required'
         ]);
         try {
             $input = $request->except(array('dragval', 'g-recaptcha-response', 'h-captcha-response'));
