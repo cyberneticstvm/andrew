@@ -285,7 +285,16 @@
             <p>1. Is on a discovery call with me. In about 20 minutes we can unpack the results of this quiz and tap into some smart actions that are going to move the needle for you right now.</p>
             <p>2. Is by taking the mini training course that I have designed for you.</p>
             <p>So now it’s up to you! Choose the best way forward and start to maximise your life!</p>
-            <div class="call1"><a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">DISCOVERY CALL</a><a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">MINI TRAINING</a></div>
+            <table width="100%">
+                <tr>
+                    <td class="text-center call" width="50%">
+                        <a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">DISCOVERY CALL</a>
+                    </td>
+                    <td class="text-center call" width="50%">
+                        <a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">MINI TRAINING</a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
