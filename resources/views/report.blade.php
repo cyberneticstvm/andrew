@@ -228,7 +228,7 @@
             <div class='head text-center'>YOUR FOCUS FOR GROWTH IS ...</div>
             <br />
         </div>
-        <div class="profile text-center"><img src="./assets/focus/{{ $focus->img_name }}" class="img-fluid" height="50%" /></div>
+        <div class="profile text-center"><img src="./assets/focus/{{ $focus->img_name }}" class="img-fluid" height="50%" width="100%" /></div>
         <div class="col page">
             <p class="text-center">Does that sound right? Or is there something else?</p>
             <p class="text-center">Do you have clarity on where you want to go and the steps you need to
