@@ -109,6 +109,7 @@ class QuizController extends Controller
             $message->to($quiz->email, $quiz->name);
             $message->subject('Life Style Design Quiz - Report');
         });
+        echo "success";
         /*Mail::to($quiz->email)->send(new ReportEmail($data));
         $chart = $this->generateChart($quiz);
         $chart = base64_encode(file_get_contents($chart));
