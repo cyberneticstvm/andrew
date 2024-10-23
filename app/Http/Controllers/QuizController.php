@@ -106,6 +106,7 @@ class QuizController extends Controller
         $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
         $data = ['name' => $quiz->name];
         Mail::to($quiz->email)->send(new ReportEmail($data));
+        echo "success";
         /*$chart = $this->generateChart($quiz);
         $chart = base64_encode(file_get_contents($chart));
         $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));
