@@ -84,7 +84,7 @@ class QuizController extends Controller
             $strengths = Strength::all();
             $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
             $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
-            $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first()->label;
+            $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
             $chart = $this->generateChart($quiz);
             $chart = base64_encode(file_get_contents($chart));
             $data = ['name' => $quiz->name];
@@ -103,7 +103,7 @@ class QuizController extends Controller
         $strengths = Strength::all();
         $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
         $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
-        $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first()->label;
+        $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
         $chart = $this->generateChart($quiz);
         $chart = base64_encode(file_get_contents($chart));
         $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('outcome', 5)->nullable();
             $table->string('label')->nullable();
             $table->text('description')->nullable();
+            $table->string('img_name', 50)->nullable();
             $table->timestamps();
         });
     }

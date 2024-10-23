@@ -228,7 +228,7 @@
             <div class='head text-center'>YOUR FOCUS FOR GROWTH IS ...</div>
             <br />
         </div>
-        <div class="profile text-center"><img src="./assets/bgs/{{ $quiz->category.'.jpg' }}" class="img-fluid" height="50%" /></div>
+        <div class="profile text-center"><img src="./assets/focus/{{ $focus->img_name }}" class="img-fluid" height="50%" /></div>
         <div class="col page">
             <p class="text-center">Does that sound right? Or is there something else?</p>
             <p class="text-center">Do you have clarity on where you want to go and the steps you need to
@@ -277,7 +277,7 @@
             <p>Hey {{ $quiz->name }},</p>
             <p>Thanks for taking the quiz. I trust this report has helped you.</p>
             <p>I know you’re here because you want to see breakthrough in your life. You’re here because the traditional way of doing things just hasn’t worked, or is going waaaayyy too slow to be OK</p>
-            <p>You have a strength of {{ $strength->outcome }} and you’re willing to work hard to get rapid gains in your {{ $focus }} – am I right?</p>
+            <p>You have a strength of {{ $strength->outcome }} and you’re willing to work hard to get rapid gains in your {{ $focus->label }} – am I right?</p>
             <p>That’s why I created this quiz. Because step 1 is getting to know what you actually want to change.</p>
             <p>And then Step 2 is getting clear on your unique identity, but also working on your weak areas and any limiting beliefs that might be holding you back.</p>
             <p>From there, you can design a strategy and start building the life of your dreams!.</p>
