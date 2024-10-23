@@ -104,11 +104,13 @@ class QuizController extends Controller
         $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
         $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
         $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
-        $chart = $this->generateChart($quiz);
+        $data = ['name' => $quiz->name];
+        Mail::to($quiz->email)->send(new ReportEmail($data));
+        /*$chart = $this->generateChart($quiz);
         $chart = base64_encode(file_get_contents($chart));
         $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));
         return $pdf->stream($quiz->id . '.pdf');
-        /*return view('report', compact('quiz', 'strength', 'chart', 'outcome', 'questions', 'strengths'));*/
+        return view('report', compact('quiz', 'strength', 'chart', 'outcome', 'questions', 'strengths'));*/
     }
 
     function generateChart($quiz)
