@@ -105,13 +105,9 @@ class QuizController extends Controller
         $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
         $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
         $data = ['name' => $quiz->name];
-        Mail::send('report-email', $data, function ($message) use ($quiz) {
-            $message->to($quiz->email, $quiz->name);
-            $message->subject('Life Style Design Quiz - Report');
-        });
+        Mail::to($quiz->email)->send(new ReportEmail($data));
         echo "success";
-        /*Mail::to($quiz->email)->send(new ReportEmail($data));
-        $chart = $this->generateChart($quiz);
+        /*$chart = $this->generateChart($quiz);
         $chart = base64_encode(file_get_contents($chart));
         $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));
         return $pdf->stream($quiz->id . '.pdf');
