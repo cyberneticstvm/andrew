@@ -45,7 +45,7 @@
         }
 
         .page p {
-            width: 80%;
+            width: 90%;
             text-align: justify;
             font-size: 1.2rem;
             margin-left: 5%;
@@ -244,14 +244,13 @@
                 @empty
                 @endforelse
             </table>
-            <br /><br />
-            <div class='head text-center'>YOUR FOCUS FOR GROWTH IS ...</div>
             <br />
+            <div class='head text-center'>YOUR FOCUS FOR GROWTH IS ...</div>
         </div>
         <div class="profile text-center"><img src="./assets/focus/{{ $focus->img_name }}" class="img-fluid" width="100%" /></div>
         <div class="col page">
             <p class="text-center">Does that sound right? Or is there something else?</p>
-            <p class="text-center">{!! $desc !!}</p>
+            <p class="">{!! $desc !!}</p>
             <p class="text-center">{!! $strength->description2 !!}</p>
             <p>Take a personalised mini training if you’re ready to start winning!</p>
             <div class="call"><a href="https://www.blueprintlifecoaching.com.au/coaching/let-s-talk" target="_blank">GET THE TRAINING</a></div>
