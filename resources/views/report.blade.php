@@ -150,6 +150,26 @@
         .text-justify {
             text-align: justify !important;
         }
+
+        .innovation {
+            background-color: #f79109 !important;
+        }
+
+        .compassion {
+            background-color: #ff0066 !important;
+        }
+
+        .optimism {
+            background-color: #ffcc00 !important;
+        }
+
+        .vision {
+            background-color: #a8d18d !important;
+        }
+
+        .action {
+            background-color: #4472c8 !important;
+        }
     </style>
 </head>
 
