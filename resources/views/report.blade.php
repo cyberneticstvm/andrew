@@ -231,9 +231,9 @@
         <div class="profile text-center"><img src="./assets/focus/{{ $focus->img_name }}" class="img-fluid" width="100%" /></div>
         <div class="col page">
             <p class="text-center">Does that sound right? Or is there something else?</p>
-            <p class="text-center">Do you have clarity on where you want to go and the steps you need to
-                take to get you there? Your optimistic outlook is a great strength!</p>
-            <p>Take your personalised mini training if you’re ready for more!</p>
+            <p class="text-center">{!! $desc !!}</p>
+            <p class="text-center">{!! $strength->description2 !!}</p>
+            <p>Take a personalised mini training if you’re ready to start winning!</p>
             <div class="call"><a href="https://www.blueprintlifecoaching.com.au/coaching/let-s-talk" target="_blank">GET THE TRAINING</a></div>
         </div>
     </div>

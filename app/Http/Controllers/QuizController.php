@@ -85,10 +85,11 @@ class QuizController extends Controller
             $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
             $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
             $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
+            $desc = Outcome::where('category', 'C')->where('outcome', $quiz->outcome)->first()->description;
             $chart = $this->generateChart($quiz);
             $chart = base64_encode(file_get_contents($chart));
             $data = ['name' => $quiz->name];
-            $data['report'] = Pdf::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));
+            $data['report'] = Pdf::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus', 'desc'));
             Mail::to($quiz->email)->send(new ReportEmail($data));
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
@@ -104,13 +105,14 @@ class QuizController extends Controller
         $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
         $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
         $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
+        $desc = Outcome::where('category', 'C')->where('outcome', $quiz->outcome)->first()->description;
         $chart = $this->generateChart($quiz);
         $chart = base64_encode(file_get_contents($chart));
         /*$data = ['name' => $quiz->name];
         $data['report'] = Pdf::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));
         Mail::to($quiz->email)->send(new ReportEmail($data));
         echo "success";*/
-        $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus'));
+        $pdf = PDF::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus', 'desc'));
         return $pdf->stream($quiz->id . '.pdf');
         //return view('report', compact('quiz', 'strength', 'chart', 'outcome', 'questions', 'strengths'));*/
     }
