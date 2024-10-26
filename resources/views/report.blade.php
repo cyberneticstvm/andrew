@@ -265,7 +265,7 @@
             <ul>
                 @forelse($questions as $key => $question)
                 <li class="">
-                    <p>{!! $question->question !!}</p>
+                    <p style="font-size: 15px;">{!! $question->question !!}</p>
                 </li>
                 @if($question->type != 'radio')
                 <hr class='solid'>
