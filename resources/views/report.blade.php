@@ -16,7 +16,7 @@
 
         @font-face {
             font-family: 'text-bold';
-            src: url("{{ storage_path('/fonts/Raleway-Bold.ttf') }}") format("truetype");
+            src: url("{{ storage_path('/fonts/Lulo_Clean_W01_One_Bold.ttf') }}") format("truetype");
         }
 
         @page {
