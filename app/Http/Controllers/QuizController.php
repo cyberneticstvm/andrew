@@ -19,6 +19,13 @@ use QuickChart;
 
 class QuizController extends Controller
 {
+    private $settings;
+
+    public function __construct()
+    {
+        $this->settings = DB::table('settings')->first();
+    }
+
     function form()
     {
         $questions = Question::all();
@@ -83,14 +90,26 @@ class QuizController extends Controller
             $strength = Strength::where('category', $quiz->category)->first();
             $strengths = Strength::all();
             $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
-            $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
+            $questions = DB::table('clarity_questions')->get();
             $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
-            $desc = Outcome::where('category', 'C')->where('outcome', $quiz->outcome)->first()->description;
+            $desc = Outcome::where('category', 'C')->where('outcome', $quiz->outcome)->first();
+            $score = implode('', $quiz->q25);
             $chart = $this->generateChart($quiz);
             $chart = base64_encode(file_get_contents($chart));
             $data = ['name' => $quiz->name];
             $data['report'] = Pdf::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus', 'desc'));
             Mail::to($quiz->email)->send(new ReportEmail($data));
+            $data1 = array('first_name' => $quiz->name, 'email' => $quiz->email, 'strength' => $strength->outcome, 'ffg' => $outcome->label, 'score' => $score);
+            Mail::send('output', $data1, function ($message) use ($score) {
+                if ($score >= 7):
+                    $message->to($this->settings->gt_seven, 'Zapier');
+                else:
+                    $message->to($this->settings->lt_seven, 'Zapier');
+                endif;
+                $message->from($this->settings->admin_email, $this->settings->admin_name);
+                $message->replyTo($this->settings->cc_email, $this->settings->cc_name);
+                $message->subject('Lifestyle Design quiz submission');
+            });
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }
@@ -103,9 +122,9 @@ class QuizController extends Controller
         $strength = Strength::where('category', $quiz->category)->firstOrFail();
         $strengths = Strength::all();
         $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
-        $questions = DB::table('clarity_questions')->where('outcome', $outcome->id)->get();
+        $questions = DB::table('clarity_questions')->get();
         $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
-        $desc = Outcome::where('category', 'C')->where('outcome', $quiz->outcome)->first()->description;
+        $desc = Outcome::where('category', 'C')->where('outcome', $quiz->outcome)->first();
         $chart = $this->generateChart($quiz);
         $chart = base64_encode(file_get_contents($chart));
         /*$data = ['name' => $quiz->name];

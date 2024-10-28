@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('clarity_questions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('outcome');
             $table->text('question')->nullable();
-            $table->string('type', 10)->nullable();
+            $table->integer('no_of_lines')->default(0);
             $table->timestamps();
         });
     }

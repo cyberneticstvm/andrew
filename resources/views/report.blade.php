@@ -128,9 +128,8 @@
         }
 
         .solid {
-            width: 90%;
-            color: #000;
-            font-weight: bold;
+            width: 100%;
+            color: #e6e6e6;
         }
 
         .chkpoint img {
@@ -250,7 +249,7 @@
         <div class="profile text-center"><img src="./assets/focus/{{ $focus->img_name }}" class="img-fluid" width="100%" /></div>
         <div class="col page">
             <p class="text-center">Does that sound right? Or is there something else?</p>
-            <p class="">{!! $desc !!}</p>
+            <p class="">{!! $desc->description !!}</p>
             <p class="text-center">{!! $strength->description2 !!}</p>
             <p>Take a personalised mini training if you’re ready to start winning!</p>
             <div class="call"><a href="https://www.blueprintlifecoaching.com.au/coaching/let-s-talk" target="_blank">GET THE TRAINING</a></div>
@@ -260,20 +259,18 @@
     <div class="row">
         <div class="col page">
             <div class='head'>CLARITY QUESTIONS</div>
-            <p class="">Get deeper clarity on what your signature strength means to you and how you can apply it to reach your goals…</p>
-            <p class="">{{ $outcome->description }}</p>
+            <p style="font-size: 15px;">{!! $desc->intro_text !!}</p>
             <ul>
                 @forelse($questions as $key => $question)
                 <li class="">
                     <p style="font-size: 15px;">{!! $question->question !!}</p>
                 </li>
-                @if($question->type != 'radio')
-                <hr class='solid'>
-                <hr class='solid'>
-                <hr class='solid'>
-                @endif
-                @empty
-                @endforelse
+                @for($i=0; $i < $question->no_of_lines; $i++)
+                    <hr class='solid'>
+                    @endfor
+
+                    @empty
+                    @endforelse
             </ul>
             <p class="text-center">Want to get more clarity?</p>
             <div class="call1"><a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">BOOK A FREE DISCOVERY CALL</a></div>
