@@ -99,7 +99,7 @@ class QuizController extends Controller
             $data = ['name' => $quiz->name];
             $data['report'] = Pdf::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus', 'desc'));
             Mail::to($quiz->email)->send(new ReportEmail($data));
-            $data1 = array('first_name' => $quiz->name, 'email' => $quiz->email, 'strength' => $strength->outcome, 'ffg' => $outcome->label, 'score' => $score);
+            $data1 = array('name' => $quiz->name, 'email' => $quiz->email, 'strength' => $strength->outcome, 'ffg' => $outcome->label, 'score' => $score);
             Mail::send('output', $data1, function ($message) use ($score) {
                 if ($score >= 7):
                     $message->to($this->settings->gt_seven, 'Zapier');
