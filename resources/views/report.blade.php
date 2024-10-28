@@ -185,7 +185,7 @@
                 <div class="mb-3">Based on your responses in the quiz, your Strength Profile is:</div>
                 <div class="text-center">
                     <br>
-                    <div class="head" style="background-color: {{ $strength->bg_color }}; width: 30%; margin: 0 auto; border-radius: 30px; padding: 10px; text-align: center; color: #fff;">{{ $strength->outcome }}</div>
+                    <div class="head" style="background-color: {{ $strength->bg_color }}; width: 50%; margin: 0 auto; border-radius: 30px; padding: 10px; text-align: center; color: #fff;">{{ $strength->outcome }}</div>
                     <br>
                 </div>
                 <div class="desc">
