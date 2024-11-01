@@ -51,7 +51,6 @@ var bootstrapWizardCreate = function(element, options) {
 	};
 
 	this.next = function(e) {
-
 		// If we clicked the last then dont activate this
 		if(element.hasClass('last')) {
 			return false;
@@ -63,6 +62,12 @@ var bootstrapWizardCreate = function(element, options) {
 
 		// Did we click the last button
 		$index = obj.nextIndex();
+		let qid = $(".wizard-navigation ul>li.active").find('.asd').data('qid');
+		let input = $(".wizard-navigation ul>li.active").find('.asd').data('input');
+		if(qid != 9){
+			if(!checkForm(qid, input))
+				return false
+		}
 		if($index > obj.navigationLength()) {
 		} else {
 			$navigation.find(baseItemSelector + ':eq('+$index+') a').tab('show');
@@ -123,15 +128,11 @@ var bootstrapWizardCreate = function(element, options) {
 		return $navigation.find(baseItemSelector).index(e);
 	};
 	this.nextIndex = function() {
-		
 		let index = 0 //$navigation.find(baseItemSelector).index($activeTab) + 1;
 		let qid = $(".wizard-navigation ul>li.active").find('.asd').data('qid');
-		let input = $(".wizard-navigation ul>li.active").find('.asd').data('input');
 		if(qid == 9){
 			index = $(".dragVal:first").data('next') - 1;
 		}else{
-			if(!checkForm(qid, input))
-				return false
 			index = $(".q"+ qid +":checked").data('next') - 1;
 		}
 		return index;

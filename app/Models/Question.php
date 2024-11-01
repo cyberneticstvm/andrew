@@ -15,4 +15,9 @@ class Question extends Model
     {
         return $this->hasMany(Option::class, 'qid', 'id');
     }
+
+    public function optionsInRandom($qid)
+    {
+        return Option::inRandomOrder()->where('qid', $qid)->get();
+    }
 }

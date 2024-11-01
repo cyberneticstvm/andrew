@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <div class="image-container set-full-height" style="background-image: url('{{ asset('/assets/img/bg.png') }}')">
+    <div class="image-container set-full-height" style="background-image: url('{{ asset('/assets/img/bg.jpg') }}')">
         <!--   Creative Tim Branding   -->
         <a href="https://www.andrewlord.com.au/" target="_blank">
             <div class="logo-container">
@@ -33,7 +33,7 @@
                     <img src="{{ asset('/assets/img/favicon.png') }}">
                 </div>
                 <div class="brand">
-                    Andrew Lord
+
                 </div>
             </div>
         </a>
@@ -69,7 +69,6 @@
                                         {{ session('error') }}
                                     </div>
                                     @endsession
-                                    <h5>This information will let us know more about yourself.</h5>
                                 </div>
                                 <div class="wizard-navigation">
                                     <ul>
@@ -89,7 +88,7 @@
                                                 <h4 class="info-text fw-bold">{{ $question->header ?? '' }}</h4>
                                             </div>
                                             <div class="col-sm-12">
-                                                <h4 class="fw-bold">{{ $question->question }}</h4>
+                                                <h4 class="fw-bold">{!! $question->question !!}</h4>
                                                 @if($key == 1)
                                                 <div class="row">
                                                     <div class="col-sm-1"></div>
@@ -114,7 +113,7 @@
                                                 @if($question->qcode == 'q9')
                                                 <div class="sortable-list">
                                                     <ul class="sortable" id="sortable">
-                                                        @forelse($question->options as $key1 => $option)
+                                                        @forelse($question->optionsInRandom(9) as $key1 => $option)
                                                         <li draggable="true" data-optval="{{ $option->id }}">
                                                             <h4><span class="dragNum">{{ $key1 + 1 }}. </span>{{ $option->option }}</h4>
                                                             <input type="hidden" name="dragval[]" value="{{ $option->id }}" class="dragVal {{ $question->qcode }}" data-next="{{ $option->next_question }}" data-prev="{{ $option->prev_question }}" />
@@ -200,7 +199,7 @@
 
         <div class="footer">
             <div class="container text-center">
-                <a href="https://lifestyledesignquiz.com/" target="_blank">Lifestyle Design Quiz</a>.
+                <a href="https://lifestyledesignquiz.com/" target="_blank">&#169; Andrew Lord, MX Life Academy</a>.
             </div>
         </div>
     </div>

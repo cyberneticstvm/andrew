@@ -23,9 +23,15 @@ function checkForm(div, itype){
             count++
         }
     });
-    if(itype == 'radio' && count == 1)
+    if(itype == 'radio' && count == 1){
         return true;
-    if(itype == 'checkbox' && count == 2)
+    }else if(itype == 'radio' && count == 0){
+        alert("Please select an option")
+    }
+    if(itype == 'checkbox' && count == 2){
         return true;
+    }else if(itype == 'checkbox' && count != 2){
+        alert("Please select Two options")
+    }        
     return false;
 }
