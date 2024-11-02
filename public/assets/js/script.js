@@ -1,19 +1,19 @@
 $(function(){
     "use strict"
 
-    /*$('form').submit(function() {
+    $('form').submit(function() {
         $(this).find(".btn-finish").attr("disabled", true);
         $(this).find(".btn-finish").html("Submitting...<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>");
-    });*/
+    });
 
-    /*$(document).on("click", ".btn-finish", function(){
-        if($('[name=h-captcha-response]').val()){
+    $(document).on("click", ".btn-finish", function(){
+        if($('[name=g-recaptcha-response]').val()){
             $(this).closest('form').submit();
         }else{
             alert('Please verify the Captcha!');
             return false;
         }
-    });*/
+    });
 });
 
 function checkForm(div, itype){
