@@ -12,7 +12,7 @@ $strength = Session::get('strength');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Life Style Design quiz</title>
-  <link rel="icon" type="image/x-icon" href="{{ public_path().'/assets/images/favicon.png' }}">
+  <link rel="icon" type="image/png" href="{{ asset('/assets/img/favicon.png') }}" />
   <!-- Bootstrap 5 CSS -->
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
   <!-- Font Awesome 5 -->
@@ -46,7 +46,8 @@ $strength = Session::get('strength');
       padding: 2%;
     }
 
-    .desc p {
+    .desc p,
+    .desc {
       font-size: 1.5rem;
       color: #fff;
       width: 80%;
@@ -81,7 +82,7 @@ $strength = Session::get('strength');
   <div class="container">
     <div class="row">
       <div class="col-12 text-center logo">
-        <img src="{{ asset('/assets/img/andrewlord-full-blue.png') }}" class="img-fluid" />
+        <img src="{{ asset('/assets/img/andrewlord-new-logo.png') }}" class="img-fluid" />
       </div>
       <div class="col-12 text-center">
         <h3>Congratulations, you have completed the Lifestyle Design Quiz!<br />
@@ -118,7 +119,7 @@ $strength = Session::get('strength');
     <div class="row mt-5 mb-5">
       <div class="col-lg-3"></div>
       <div class="col-lg-6 text-center cbtn">
-        <a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">BOOK A FREE CALL</a>
+        <a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">TAKE THE FREE MINI COURSE</a>
       </div>
       <div class="col-lg-3"></div>
     </div>
