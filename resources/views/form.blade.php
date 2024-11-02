@@ -22,6 +22,8 @@
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('/assets/css/demo.css') }}" rel="stylesheet" />
+
+    <script async src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -171,10 +173,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 col-sm-offset-4 mt-3">
-                                                    {!! Captcha::display() !!}
-                                                    @error('h-captcha-response')
-                                                    <small class="text-danger">{{ $errors->first('h-captcha-response') }}</small>
-                                                    @enderror
+                                                    <div class="g-recaptcha mt-4" data-sitekey={{ config('services.recaptcha.key' )}}></div>
                                                 </div>
                                             </div>
                                         </div>
