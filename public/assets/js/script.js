@@ -7,9 +7,9 @@ $(function(){
     });
 
     $(document).on("click", ".btn-finish", function(){
-        if($('[name=g-recaptcha-response]').val()){
+        if($('[name=g-recaptcha-response]').val() && $('[name=name]').val() && $('[name=email]').val()){
             $(this).closest('form').submit();
-        }else{
+        }else if(!$('[name=g-recaptcha-response]').val()){
             alert('Please verify the Captcha!');
             return false;
         }
