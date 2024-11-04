@@ -4,6 +4,7 @@ $(function(){
     $('form').submit(function() {
         $(this).find(".btn-finish").attr("disabled", true);
         $(this).find(".btn-finish").html("Submitting...<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>");
+        $(".g-recaptcha").hide();
     });
 
     $(document).on("click", ".btn-finish", function(){
