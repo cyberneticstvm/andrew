@@ -17,4 +17,4 @@ So, let’s see what the results reveal!<br><br>
 
 Sincere regards,<br>
 <img src="http://andrew.lifestyledesignquiz.com/public/assets/img/signature.jpg" width="100" /><br><br>
-<img src="http://andrew.lifestyledesignquiz.com/public/assets/img/andrewlord-new-logo.png" width="35%" />
+<img src="http://andrew.lifestyledesignquiz.com/public/assets/img/andrewlord-new-logo-email.png" width="35%" />
