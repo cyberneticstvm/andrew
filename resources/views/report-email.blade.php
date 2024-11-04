@@ -1,17 +1,20 @@
 Dear {{ $name }},<br><br>
-Thank you for making an investment in your future by taking the Lifestyle Design Quiz<br><br>
-The attached pages are your personalised report, specifically designed to help you get a deeper understanding of yourself and clarity on how to take smart-steps right away, to clear the fog and move yourself closer toward that Maximised Life that you have dreamed about.<br><br>
+Thank you for making an investment in your future by taking the Lifestyle Design Quiz. We have analysed your responses and created this personalised report, just for you!<br><br>
 
-The Strength Profile and the Clarity Questions will give you some insights on how you bring your best self to the table for greater impact.<br><br>
+The following pages are specifically designed to help you gain deeper insights into yourself and give you the clarity and confidence you need to make your next smart moves. There is a link to additional free training at the end of this report that will help you to understand your results even more and to start applying them to see real change in your life. I encourage you to take this opportunity.<br><br>
 
-You can’t do everything at once, so the Focus for Growth results will show you what matters most to you right now and will offer some smart, low-input, big impact steps you can take right away to initiate positive momentum in your daily living.<br><br>
+If you are a parent, an educator, or entrepreneur — then you are a leader. You’re positioned and compelled to create change — in your business, organisation, or at home. But right now, I’m guessing, you’re feeling stuck. Unsure how to move ahead. Unsure of how to create that life and impact that you’ve dreamed about…<br><br>
 
-Once you’ve read through this report, I’d love to get on a call with you and show you how I can help. I have a bunch of tools and resources that I know will make a big difference.<br><br>
+Am I right?<br /><br />
 
-So, thank you for being one of the ‘doers’, the ones willing to take positive steps for change. Welcome to our growing community!<br><br>
+I get it. I know that feeling, because I’ve stood exactly where you are now. I have had more crisis moments in my life than I can count! Hungry for ‘better’, but so often failing in the quest. Sitting with my head in my hands and wondering how I was going to pull myself out of the hole I had landed in – again.<br><br>
 
-Now, let’s see what the results show!<br><br>
+The “gifts” I’ve brought back from these wilderness times, include powerful insights about identity, mindset, learning, faith, life-design, and leadership. I’ve developed an insatiable hunger for growth, studied hard to enhance my abilities as a coach, and for the past decade now, I’ve been blessed to work with hundreds of men and women, just like you. Everyday leaders. Born to make a difference.<br><br>
 
-Kind regards,<br>
-<img src="https://lifestyledesignquiz.com/projects/quiz/public/assets/images/signature.jpg" width="100" /><br><br>
-<img src="https://lifestyledesignquiz.com/projects/quiz/public/assets/images/andrewlord-full-navy-blue.png" width="35%" />
+I know that YOU have something unique and brilliant to share with the world, and it would be my absolute privilege and delight to help you realise that!<br /><br />
+
+So, let’s see what the results reveal!<br><br>
+
+Sincere regards,<br>
+<img src="http://andrew.lifestyledesignquiz.com/public/assets/img/signature.jpg" width="100" /><br><br>
+<img src="http://andrew.lifestyledesignquiz.com/public/assets/img/andrewlord-new-logo.png" width="35%" />

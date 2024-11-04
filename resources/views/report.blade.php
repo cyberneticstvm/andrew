@@ -39,6 +39,11 @@
             font-family: text;
         }
 
+        .page1 {
+            margin: 10px 0px 0px 40px;
+            font-family: text;
+        }
+
         .head {
             font-family: 'text-bold';
             font-size: 1.5rem;
@@ -175,9 +180,9 @@
 <body>
     <!--<div class="cover"></div>-->
     <div class="cover">
-        <img src="./assets/img/cover-high-res.png" class="img-fluid" />
+        <img src="./assets/img/cover.jpg" class="img-fluid" />
     </div>
-    <img src="./assets/img/thankyou.png" class="img-fluid" />
+    <img src="./assets/img/message.jpg" class="img-fluid" width="100%" />
     <div class="container-fluid">
         <div class="row">
             <div class="col page">
@@ -210,7 +215,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col page" style="width: 100%;">
+        <div class="col page1" style="width: 100%;">
             <div class='head' style="width: 100%;">YOUR PROFILE</div>
             <img src="data:image/png;base64, {{ $chart }}" />
         </div>
@@ -248,11 +253,11 @@
         </div>
         <div class="profile text-center"><img src="./assets/focus/{{ $focus->img_name }}" class="img-fluid" width="100%" /></div>
         <div class="col page">
-            <p class="text-center">Does that sound right? Or is there something else?</p>
+            <p class="text-center" style="margin-top: -15px;">Does that sound right? Or is there something else?</p>
             <p class="">{!! $desc->description !!}</p>
             <p class="text-center">{!! $strength->description2 !!}</p>
             <p>Take a personalised mini training if you’re ready to start winning!</p>
-            <div class="call"><a href="https://www.blueprintlifecoaching.com.au/coaching/let-s-talk" target="_blank">GET THE TRAINING</a></div>
+            <div class="call" style="margin-bottom: 25px;"><a href="https://www.blueprintlifecoaching.com.au/coaching/let-s-talk" target="_blank">GET THE TRAINING</a></div>
         </div>
     </div>
     <div class="br"></div>
@@ -263,10 +268,10 @@
             <ul>
                 @forelse($questions as $key => $question)
                 <li class="">
-                    <p style="font-size: 15px;">{!! $question->question !!}</p>
+                    <p style="font-size: 14px;">{!! $question->question !!}</p>
                 </li>
-                @for($i=0; $i < $question->no_of_lines; $i++)
-                    <hr class='solid'>
+                @for($i=0; $i < $question->no_of_lines / 2; $i++)
+                    <div>_______________________________________________________________________________</div>
                     @endfor
 
                     @empty
@@ -280,12 +285,13 @@
     <div class="row">
         <div class="col page">
             <div class='head'>CHECKPOINT</div>
+            <div class='chkpoint'><img src="./assets/bgs/{{ $strength->img_name2 }}" class="img-fluid" width="20%" /></div>
             <p>Here are some things to watch out for…</p>
-            <div class="chkpoint">
+            <div style="margin-top: -50px;">
                 <p>{!! $strength->description1 !!}</p>
             </div>
         </div>
-        <div class="profile text-center"><img src="./assets/bgs/{{ $strength->img_name }}" class="img-fluid" width="100%" height="100%" /></div>
+        <div class="profile text-center"><img src="./assets/img/bgs/{{ $strength->img_name }}" class="img-fluid" width="100%" height="100%" /></div>
     </div>
     <div class="br"></div>
     <div class="row">
@@ -303,10 +309,11 @@
             <p>So now it’s up to you! Choose the best way forward and start to maximise your life!</p>
             <table width="100%">
                 <tr>
-                    <td class="text-center call" width="50%">
+                    <td class="text-center call" width="45%">
                         <a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">DISCOVERY CALL</a>
                     </td>
-                    <td class="text-center call" width="50%">
+                    <td width="10%"></td>
+                    <td class="text-center call" width="45%">
                         <a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">MINI TRAINING</a>
                     </td>
                 </tr>
