@@ -135,6 +135,7 @@ var bootstrapWizardCreate = function(element, options) {
 		}else{
 			index = $(".q"+ qid +":checked").data('next') - 1;
 		}
+		grecaptcha.reset();
 		return index;
 	};
 	this.previousIndex = function() {
