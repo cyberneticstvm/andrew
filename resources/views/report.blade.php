@@ -180,9 +180,9 @@
 <body>
     <!--<div class="cover"></div>-->
     <div class="cover">
-        <img src="./assets/img/cover.jpg" class="img-fluid" />
+        <img src="./assets/img/page1.png" class="img-fluid" />
     </div>
-    <img src="./assets/img/message.jpg" class="img-fluid" width="100%" />
+    <img src="./assets/img/page2.png" class="img-fluid" width="100%" />
     <div class="container-fluid">
         <div class="row">
             <div class="col page">
