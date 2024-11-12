@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->text('description1')->nullable();
             $table->text('description2')->nullable();
+            $table->integer('order_by')->nullable();
             $table->timestamps();
         });
     }
