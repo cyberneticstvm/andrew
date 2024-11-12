@@ -92,7 +92,7 @@ class QuizController extends Controller
                 return $quiz;
             });
             $strength = Strength::where('category', $quiz->category)->first();
-            $strengths = Strength::all();
+            $strengths = Strength::orderBy('order_by')->get();
             $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
             $questions = DB::table('clarity_questions')->get();
             $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
@@ -124,7 +124,7 @@ class QuizController extends Controller
     {
         $quiz = Quiz::findOrFail($id);
         $strength = Strength::where('category', $quiz->category)->firstOrFail();
-        $strengths = Strength::all();
+        $strengths = Strength::orderBy('order_by')->get();
         $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
         $questions = DB::table('clarity_questions')->get();
         $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
