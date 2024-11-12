@@ -202,7 +202,19 @@
             </div>
         </div>
     </div>
-
+    <div class="modal fade" id="progressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">Thank You!</h2>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center fs-1">Please wait a while we analyse your results.</p><br />
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <!--   Core JS Files   -->
 <script src="{{ asset('/assets/js/jquery-2.2.4.min.js') }}" type="text/javascript"></script>

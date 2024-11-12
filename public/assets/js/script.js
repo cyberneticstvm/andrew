@@ -1,10 +1,10 @@
 $(function(){
     "use strict"
-
     $('form').submit(function() {
         $(this).find(".btn-finish").attr("disabled", true);
         $(this).find(".btn-finish").html("Submitting...<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>");
         $(".g-recaptcha").hide();
+        $("#progressModal").modal();
     });
 
     $(document).on("click", ".btn-finish", function(){
