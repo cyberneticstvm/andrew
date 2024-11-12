@@ -119,7 +119,7 @@ $strength = Session::get('strength');
     <div class="row mt-5 mb-5">
       <div class="col-lg-3"></div>
       <div class="col-lg-6 text-center cbtn">
-        <a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">TAKE THE FREE MINI COURSE</a>
+        <a href="https://mx.andrewlord.com.au/quiz-trainings" target="_blank">TAKE THE FREE MINI COURSE</a>
       </div>
       <div class="col-lg-3"></div>
     </div>

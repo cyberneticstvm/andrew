@@ -209,7 +209,7 @@
                     <h2 class="modal-title" id="exampleModalLabel">Thank You!</h2>
                 </div>
                 <div class="modal-body">
-                    <p class="text-center fs-1">Please wait a while we analyse your results.</p><br />
+                    <p class="text-center fs-1">Please wait a few minutes while we analyse your responses and generate your report.</p><br />
                     <div class="loader"></div>
                 </div>
             </div>
