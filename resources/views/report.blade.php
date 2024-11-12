@@ -175,8 +175,12 @@
             background-color: #4472c8 !important;
         }
 
-        .border {
+        .border-top {
             border-top: 1px solid #000 !important;
+        }
+
+        .mb-10 {
+            margin-bottom: 10px !important;
         }
     </style>
 </head>
@@ -275,7 +279,7 @@
                     <p style="font-size: 14px;">{!! $question->question !!}</p>
                 </li>
                 @for($i=0; $i < $question->no_of_lines / 2; $i++)
-                    <div class="border"><br /></div>
+                    <div class="border-top mb-10"></div>
                     @endfor
 
                     @empty
