@@ -179,8 +179,8 @@
             border-top: 1px solid #000 !important;
         }
 
-        .mb-20 {
-            margin-bottom: 20px !important;
+        .mt-20 {
+            margin-top: 20px !important;
         }
     </style>
 </head>
@@ -279,7 +279,7 @@
                     <p style="font-size: 14px;">{!! $question->question !!}</p>
                 </li>
                 @for($i=0; $i < $question->no_of_lines / 2; $i++)
-                    <div class="border-top mb-20"></div>
+                    <div class="border-top mt-20"></div>
                     @endfor
 
                     @empty
