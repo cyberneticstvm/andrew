@@ -228,11 +228,11 @@
             <img src="data:image/png;base64, {{ $chart }}" />
         </div>
         <div class="col-md-12 text-center">
-            <span style="background-color: #ff0066;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: text">&nbsp;Compassion</span>
-            <span style="background-color: #f79109; font-family: text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Innovation&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span style="background-color: #ffcc00; font-family: text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Optimism&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span style="background-color: #a8d18d; font-family: text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vision&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span style="background-color: #4472c8; font-family: text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</span>
+            <span style="background-color: #ff0066;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: text">&nbsp;Compassion&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span style="background-color: #f79109;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: text">&nbsp;Innovation&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span style="background-color: #ffcc00;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: text">&nbsp;Optimism&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span style="background-color: #a8d18d;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: text">&nbsp;Vision&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span style="background-color: #4472c8;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: text">&nbsp;Action</span>
         </div>
     </div>
     <div class="row">
