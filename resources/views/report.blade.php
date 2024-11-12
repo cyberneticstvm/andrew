@@ -179,7 +179,7 @@
             border-top: 1px solid #000 !important;
         }
 
-        .mt-20 {
+        .mt-25 {
             margin-top: 25px !important;
         }
     </style>
