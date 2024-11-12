@@ -174,6 +174,10 @@
         .action {
             background-color: #4472c8 !important;
         }
+
+        .border {
+            border-top: 1px solid #000 !important;
+        }
     </style>
 </head>
 
@@ -257,7 +261,7 @@
             <p class="">{!! $desc->description !!}</p>
             <p class="text-center">{!! $strength->description2 !!}</p>
             <p>Take a personalised mini training if you’re ready to start winning!</p>
-            <div class="call" style="margin-bottom: 25px;"><a href="https://www.blueprintlifecoaching.com.au/coaching/let-s-talk" target="_blank">GET THE TRAINING</a></div>
+            <div class="call" style="margin-bottom: 25px;"><a href="https://mx.andrewlord.com.au/quiz-trainings" target="_blank">GET THE TRAINING</a></div>
         </div>
     </div>
     <div class="br"></div>
@@ -271,14 +275,14 @@
                     <p style="font-size: 14px;">{!! $question->question !!}</p>
                 </li>
                 @for($i=0; $i < $question->no_of_lines / 2; $i++)
-                    <div>_______________________________________________________________________________</div>
+
                     @endfor
 
                     @empty
                     @endforelse
             </ul>
             <p class="text-center">Want to get more clarity?</p>
-            <div class="call1"><a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">BOOK A FREE DISCOVERY CALL</a></div>
+            <div class="call1"><a href="https://www.andrewlord.com.au/booking-calendar/quiz-clarity-call" target="_blank">BOOK A FREE DISCOVERY CALL</a></div>
         </div>
     </div>
     <div class="br"></div>
@@ -310,11 +314,11 @@
             <table width="100%">
                 <tr>
                     <td class="text-center call" width="45%">
-                        <a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">DISCOVERY CALL</a>
+                        <a href="https://www.andrewlord.com.au/booking-calendar/quiz-clarity-call" target="_blank">DISCOVERY CALL</a>
                     </td>
                     <td width="10%"></td>
                     <td class="text-center call" width="45%">
-                        <a href="https://www.blueprintlifecoaching.com.au/bookings-checkout/let-s-talk-life/book" target="_blank">MINI TRAINING</a>
+                        <a href="https://mx.andrewlord.com.au/quiz-trainings" target="_blank">MINI TRAINING</a>
                     </td>
                 </tr>
             </table>

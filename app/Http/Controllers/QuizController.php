@@ -26,6 +26,11 @@ class QuizController extends Controller
         $this->settings = DB::table('settings')->first();
     }
 
+    function index()
+    {
+        return view('index');
+    }
+
     function form()
     {
         $questions = Question::all();
