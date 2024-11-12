@@ -275,7 +275,7 @@
                     <p style="font-size: 14px;">{!! $question->question !!}</p>
                 </li>
                 @for($i=0; $i < $question->no_of_lines / 2; $i++)
-                    <div class="border"></div>
+                    <div class="border"><br /></div>
                     @endfor
 
                     @empty
