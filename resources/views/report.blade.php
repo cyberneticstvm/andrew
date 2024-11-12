@@ -234,10 +234,10 @@
         </div>
         <div class="col-md-12 text-center legend">
             <span style="background-color: #ff0066; font-family: text">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Compassion&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="background-color: #f79109">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Innovation&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="background-color: #ffcc00">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Optimism&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="background-color: #a8d18d">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Vision&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="background-color: #4472c8">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Action
+            <span style="background-color: #f79109; font-family: text">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Innovation&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="background-color: #ffcc00; font-family: text">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Optimism&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="background-color: #a8d18d; font-family: text">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Vision&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="background-color: #4472c8; font-family: text">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Action
         </div>
     </div>
     <div class="row">
