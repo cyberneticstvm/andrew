@@ -276,7 +276,7 @@
             <ul>
                 @forelse($questions as $key => $question)
                 <li class="">
-                    <p style="font-size: 14px;">{!! $question->question !!}</p>
+                    <p style="font-size: 15px;">{!! $question->question !!}</p>
                 </li>
                 @for($i=0; $i < $question->no_of_lines / 2; $i++)
                     <div class="border-top mt-25"></div>
