@@ -263,9 +263,9 @@
         <div class="col page">
             <p class="text-center" style="margin-top: -15px;">Does that sound right? Or is there something else?</p>
             <p class="">{!! $desc->description !!}</p>
-            <p class="text-center" style="margin-top: -5px;">{!! $strength->description2 !!}</p>
-            <p style="margin-top: -5px;">Take a personalised mini training if you’re ready to start winning!</p>
-            <div class="call" style="margin-bottom: 25px;"><a href="https://mx.andrewlord.com.au/quiz-trainings" target="_blank">GET THE TRAINING</a></div>
+            <p class="text-center" style="margin-top: -10px;">{!! $strength->description2 !!}</p>
+            <p style="margin-top: -10px;">Take a personalised mini training if you’re ready to start winning!</p>
+            <div class="call" style="margin-bottom: 215px;"><a href="https://mx.andrewlord.com.au/quiz-trainings" target="_blank">GET THE TRAINING</a></div>
         </div>
     </div>
     <div class="br"></div>
