@@ -228,7 +228,7 @@
             <img src="data:image/png;base64, {{ $chart }}" />
         </div>
         <div class="col-md-12 text-center">
-            <span style="height: 10px; background-color: #ff0066">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Compassion&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="height: 10px; background-color: #ff0066; font-family: text;">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Compassion&nbsp;&nbsp;&nbsp;&nbsp;
             <span style="height: 10px; background-color: #f79109">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Innovation&nbsp;&nbsp;&nbsp;&nbsp;
             <span style="height: 10px; background-color: #ffcc00">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Optimism&nbsp;&nbsp;&nbsp;&nbsp;
             <span style="height: 10px; background-color: #a8d18d">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Vision&nbsp;&nbsp;&nbsp;&nbsp;
