@@ -183,9 +183,9 @@
             margin-top: 25px !important;
         }
 
-        .legend span {
+        .legend span text {
             height: 10px;
-            font-size: 15px;
+            font-size: 25px;
             font-family: text;
         }
     </style>
@@ -234,7 +234,7 @@
             <img src="data:image/png;base64, {{ $chart }}" />
         </div>
         <div class="col-md-12 text-center legend">
-            <span style="background-color: #ff0066; font-family: text">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Compassion&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="background-color: #ff0066; font-family: text">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<text>Compassion</text>&nbsp;&nbsp;&nbsp;&nbsp;
             <span style="background-color: #f79109; font-family: text">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Innovation&nbsp;&nbsp;&nbsp;&nbsp;
             <span style="background-color: #ffcc00; font-family: text">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Optimism&nbsp;&nbsp;&nbsp;&nbsp;
             <span style="background-color: #a8d18d; font-family: text">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Vision&nbsp;&nbsp;&nbsp;&nbsp;
