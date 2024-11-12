@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <style>
         @font-face {
             font-family: 'text';
@@ -186,7 +185,7 @@
 
         .legend span {
             height: 10px;
-            font-family: 'Raleway';
+            font-family: text;
         }
     </style>
 </head>
