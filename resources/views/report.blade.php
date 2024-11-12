@@ -185,6 +185,7 @@
 
         .legend span {
             height: 10px;
+            font-size: 15px;
             font-family: text;
         }
     </style>
