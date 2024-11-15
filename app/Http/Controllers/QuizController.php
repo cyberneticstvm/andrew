@@ -31,6 +31,11 @@ class QuizController extends Controller
         return view('index');
     }
 
+    function mobile()
+    {
+        return view('mobile');
+    }
+
     function form()
     {
         $questions = Question::all();
