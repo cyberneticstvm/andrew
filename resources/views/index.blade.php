@@ -3086,7 +3086,7 @@
     <script src="https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[ClassicSection].0b06bb88.bundle.min.js"></script>
 </head>
 
-<body class="">
+<body class="device-mobile-optimized">
     <script type="text/javascript">
         var bodyCacheable = true;
 
