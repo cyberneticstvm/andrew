@@ -225,7 +225,12 @@
 
 <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 <script src="{{ asset('/assets/js/jquery.validate.min.js') }}"></script>
+@if($isMobile)
+<script src="{{ asset('/assets/js/dt.js') }}"></script>
+<script src="{{ asset('/assets/js/drag-and-drop-mobile.js') }}"></script>
+@else
 <script src="{{ asset('/assets/js/drag-and-drop.js') }}"></script>
+@endif
 <script src="{{ asset('/assets/js/script.js') }}"></script>
 
 </html>
