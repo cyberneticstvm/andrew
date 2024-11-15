@@ -105,7 +105,7 @@ class QuizController extends Controller
                 //return $quiz;
             });
             $strength = Strength::where('category', $quiz->category)->first();
-            /*$strengths = Strength::orderBy('order_by')->get();
+            $strengths = Strength::orderBy('order_by')->get();
             $outcome = DB::table('outcomes')->where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
             $questions = DB::table('clarity_questions')->get();
             $focus = Outcome::where('category', $quiz->category)->where('outcome', $quiz->outcome)->first();
@@ -126,7 +126,7 @@ class QuizController extends Controller
                 $message->from($this->settings->admin_email, $this->settings->admin_name);
                 $message->replyTo($this->settings->cc_email, $this->settings->cc_name);
                 $message->subject('Lifestyle Design quiz submission');
-            });*/
+            });
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }
