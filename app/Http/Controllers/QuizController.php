@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use QuickChart;
+use Illuminate\Support\Str;
 
 class QuizController extends Controller
 {
@@ -26,8 +27,11 @@ class QuizController extends Controller
         $this->settings = DB::table('settings')->first();
     }
 
-    function index()
+    function index(Request $request)
     {
+        if (Str::contains($request->userAgent(), ['iPhone', 'Android', 'Linux', 'Macintosh'])) {
+            return redirect()->route('mobile');
+        }
         return view('index');
     }
 
