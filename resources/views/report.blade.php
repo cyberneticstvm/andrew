@@ -249,7 +249,7 @@
                     <td style="height: 50px; width: 50px; background: gainsboro; text-align:center; border-radius: 50; padding-bottom:2px">
                         {{ $key + 1 }}
                     </td>
-                    <td style="height: 50px; width: 100%; background: gainsboro; border-radius: 25; padding-left:25px; padding-right: 25px;">
+                    <td style="height: 50px; width: 100%; background: gainsboro; border-radius: 25; padding-left:25px; padding-right: 25px; margin-left: 100px;">
                         {{ $item->option->option }}
                     </td>
                 </tr>
