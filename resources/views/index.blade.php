@@ -451,7 +451,7 @@
             width: 100%
         }*/
         #site-root {
-            min-width: var(--site-width);
+            /*min-width: var(--site-width);*/
             width: 100%
         }
 
