@@ -22,7 +22,7 @@ $strength = Session::get('strength');
   <style>
     .bg {
       background: linear-gradient(0deg, rgba(20, 22, 25, 0.7), rgba(13, 110, 253, 25%)),
-      url("{{ asset('/assets/bgs/'.$strength->img_name) }}");
+      url("{{ $strength?->img_name ? asset('/assets/bgs/'.$strength?->img_name) : '' }}");
       background-size: cover;
       background-repeat: no-repeat;
       font-family: 'Raleway', sans-serif;
@@ -34,7 +34,7 @@ $strength = Session::get('strength');
     }
 
     .fb img {
-      width: 15%;
+      width: 30%;
     }
 
     .logo img {
@@ -93,27 +93,27 @@ $strength = Session::get('strength');
       <div class="col-lg-3"></div>
       <div class="col-lg-6 text-center">
         <h3>Your Key Strength is:</h3>
-        <h1 style="background-color: {{ $strength->bg_color }}">{{ $strength->outcome }}
+        <h1 style="background-color: {{ $strength->bg_color ?? '' }}">{{ $strength->outcome ?? '' }}
           <h1>
       </div>
       <div class="col-lg-3"></div>
     </div>
     <div class="row">
-      <div class="col-lg-12 text-center fb">
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ 'https://lifestyledesignquiz.com/projects/andrew/public/assets/bgs/'.$strength->img_name1 }}&t=LifestyleDesignQuiz" target="_blank"><img src="{{ asset('/assets/img/facebook-share-icon.png') }}" /></a>
+      <div class="col-lg-12 text-center fb mb-5">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ 'https://lifestyledesignquiz.com/projects/andrew/public/assets/bgs/'.$strength?->img_name1 }}&t=LifestyleDesignQuiz" target="_blank"><img src="{{ asset('/assets/img/facebook-share-icon.png') }}" class='img-fluid' /></a>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12 text-center desc">
-        {!! $strength->description !!}
+        {!! $strength->description ?? '' !!}
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12 text-center desc">
         <p>The people around you need your strength.</p>
         <p>Live life at your best.</p>
-        <p>Share your strength of: <span style="color: {{ $strength->bg_color }}">{{ $strength->outcome }}</span></p>
-        <p>Want to learn more about using your strength of <span style="color: {{ $strength->bg_color }}">{{ $strength->outcome }}</span> to improve your happiness, productivity and reach your goals?</p>
+        <p>Share your strength of: <span style="color: {{ $strength?->bg_color }}">{{ $strength?->outcome }}</span></p>
+        <p>Want to learn more about using your strength of <span style="color: {{ $strength?->bg_color }}">{{ $strength?->outcome }}</span> to improve your happiness, productivity and reach your goals?</p>
       </div>
     </div>
     <div class="row mt-5 mb-5">
