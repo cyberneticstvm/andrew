@@ -223,11 +223,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col page1" style="width: 100%;">
+        <div class="col page1" style="width: 100%; margin-top: -20px;">
             <div class='head' style="width: 100%;">YOUR PROFILE</div>
             <img src="data:image/png;base64, {{ $chart }}" />
         </div>
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center" style="margin-top: -15px;">
             <span style="background-color: #ff0066;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: text">&nbsp;Compassion&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span style="background-color: #f79109;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: text">&nbsp;Innovation&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span style="background-color: #ffcc00;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: text">&nbsp;Optimism&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -243,13 +243,14 @@
             <table>
                 @forelse($quiz->domains as $key => $item)
                 <tr>
-                    <td colspan="2">&nbsp;</td>
+                    <td colspan="3">&nbsp;</td>
                 </tr>
                 <tr>
                     <td style="height: 50px; width: 50px; background: gainsboro; text-align:center; border-radius: 50; padding-bottom:2px">
                         {{ $key + 1 }}
                     </td>
-                    <td style="height: 50px; width: 100%; background: gainsboro; border-radius: 25; padding-left:25px; padding-right: 25px; margin-left: 100px;">
+                    <td style="width: 100px;">&nbsp;</td>
+                    <td style="height: 50px; width: 100%; background: gainsboro; border-radius: 25; padding-left:25px; padding-right: 25px;">
                         {{ $item->option->option }}
                     </td>
                 </tr>
@@ -308,8 +309,8 @@
             <p>Thanks for taking the quiz. I trust this report has helped you.</p>
             <p>I know you’re here because you want to see breakthrough in your life. You’re here because the traditional way of doing things just hasn’t worked, or is going waaaayyy too slow to be OK</p>
             <p>You have a strength of {{ $strength->outcome }} and you’re willing to work hard to get rapid gains in your {{ $focus->label }} – am I right?</p>
-            <p>That’s why I created this quiz. Because step 1 is getting to know what you actually want to change.</p>
-            <p>And then Step 2 is getting clear on your unique identity, but also working on your weak areas and any limiting beliefs that might be holding you back.</p>
+            <p>That's why I created this quiz. Because step 1 is getting clear on your unique identity, and working on any weaknesses or limiting beliefs that are holding you back.</p>
+            <p>And then Step 2 is getting clear on what you actually want to change. What matters most to you right now.</p>
             <p>From there, you can design a strategy and start building the life of your dreams!.</p>
             <p>There’s 2 ways you can do this.</p>
             <p>1. Is on a discovery call with me. In about 20 minutes we can unpack the results of this quiz and tap into some smart actions that are going to move the needle for you right now.</p>
