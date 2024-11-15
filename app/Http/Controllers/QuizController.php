@@ -102,7 +102,7 @@ class QuizController extends Controller
                     ];
                 endforeach;
                 QuizLifeStyleDomain::insert($data);
-                //return $quiz;
+                return $quiz;
             });
             $strength = Strength::where('category', $quiz->category)->first();
             $strengths = Strength::orderBy('order_by')->get();
