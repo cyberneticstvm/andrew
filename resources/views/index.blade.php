@@ -446,7 +446,11 @@
             overflow-y: scroll
         }
 
-        body:not(.responsive) #site-root {
+        /*body:not(.responsive) #site-root {
+            min-width: var(--site-width);
+            width: 100%
+        }*/
+        #site-root {
             min-width: var(--site-width);
             width: 100%
         }
