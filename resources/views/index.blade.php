@@ -310,7 +310,7 @@
 
         body.fullScreenMode-scrollable.device-mobile-optimized #masterPage,
         body.fullScreenMode-scrollable.device-mobile-optimized #site-root {
-            overflow-x: hidden !important;
+            /*overflow-x: hidden !important;*/
             overflow-y: hidden !important
         }
 
@@ -446,12 +446,8 @@
             overflow-y: scroll
         }
 
-        /*body:not(.responsive) #site-root {
+        body:not(.responsive) #site-root {
             min-width: var(--site-width);
-            width: 100%
-        }*/
-        #site-root {
-            /*min-width: var(--site-width);*/
             width: 100%
         }
 
