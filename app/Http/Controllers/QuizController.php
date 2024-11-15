@@ -29,7 +29,7 @@ class QuizController extends Controller
 
     function index(Request $request)
     {
-        if (Str::contains($request->userAgent(), ['iPhone', 'Android', 'Linux', 'Macintosh'])) {
+        if (isMobileDevice($request)) {
             return redirect()->route('mobile');
         }
         return view('index');
@@ -40,10 +40,14 @@ class QuizController extends Controller
         return view('mobile');
     }
 
-    function form()
+    function form(Request $request)
     {
         $questions = Question::all();
-        return view('form', compact('questions'));
+        $isMobile = false;
+        if (isMobileDevice($request)) {
+            $isMobile = true;
+        }
+        return view('form', compact('questions', 'isMobile'));
     }
 
     function submit(Request $request)

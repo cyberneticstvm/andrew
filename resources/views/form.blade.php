@@ -72,6 +72,7 @@
                                     </div>
                                     @endsession
                                 </div>
+                                @if(!$isMobile)
                                 <div class="wizard-navigation">
                                     <ul>
                                         @forelse($questions as $key => $question)
@@ -81,7 +82,7 @@
                                         <li><a class="asd" href="#q26" data-toggle="tab" data-qid="26" data-input="text">q26</a></li>
                                     </ul>
                                 </div>
-
+                                @endif
                                 <div class="tab-content">
                                     @forelse($questions as $key => $question)
                                     <div class="tab-pane" id="{{ $question->qcode }}">
