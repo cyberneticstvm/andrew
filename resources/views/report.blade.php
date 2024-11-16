@@ -266,7 +266,7 @@
             <p class="">{!! $desc->description !!}</p>
             <p class="text-center" style="margin-top: -10px;">{!! $strength->description2 !!}</p>
             <p style="margin-top: -10px;">Take a personalised mini training if you’re ready to start winning!</p>
-            <div class="call" style="margin-bottom: 15px;"><a href="https://mx.andrewlord.com.au/quiz-trainings" target="_blank">GET THE TRAINING</a></div>
+            <div class="call" style="margin-bottom: 35px;"><a href="https://mx.andrewlord.com.au/quiz-trainings" target="_blank">GET THE TRAINING</a></div>
         </div>
     </div>
     <div class="br"></div>
