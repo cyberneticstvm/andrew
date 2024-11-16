@@ -41,10 +41,10 @@
         </a>
 
         <!--  Made With Material Kit  -->
-        <a href="#" class="made-with-mk">
+        <!--<a href="#" class="made-with-mk">
             <div class="brand">MK</div>
             <div class="made-with">Made with <strong>Material Kit</strong></div>
-        </a>
+        </a>-->
 
         <!--   Big container   -->
         <div class="container">
@@ -112,6 +112,7 @@
                                                 </div>
                                                 @endif
                                                 @if($question->qcode == 'q9')
+                                                @if($isMobile) <div>(Tap and hold to rearrange the tiles if on a mobile device)</div>@endif
                                                 <div class="sortable-list">
                                                     <ul class="sortable" id="sortable">
                                                         @forelse($question->optionsInRandom(9) as $key1 => $option)
