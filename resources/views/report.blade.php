@@ -188,9 +188,9 @@
 <body>
     <!--<div class="cover"></div>-->
     <div class="cover">
-        <img src="./assets/img/page1.png" class="img-fluid" />
+        <img src="./assets/img/page1.webp" class="img-fluid" />
     </div>
-    <img src="./assets/img/page2.png" class="img-fluid" width="100%" />
+    <img src="./assets/img/page2.webp" class="img-fluid" width="100%" />
     <div class="container-fluid">
         <div class="row">
             <div class="col page">
@@ -205,7 +205,7 @@
                     <p>{!! $strength->description !!}</p>
                 </div>
             </div>
-            <div class="profile"><img src="./assets/bgs/{{ $quiz->category.'.jpg' }}" class="img-fluid" height="100%" /></div>
+            <div class="profile"><img src="./assets/img/bgs/{{ $quiz->category.'.webp' }}" class="img-fluid" height="100%" /></div>
         </div>
     </div>
     <div class="row">
@@ -214,7 +214,7 @@
             <table>
                 @forelse($strengths as $key => $s)
                 <tr>
-                    <td><img src="./assets/bgs/{{ $s->img_name1 }}" width="100%" /></td>
+                    <td><img src="./assets/img/bgs/{{ $s->img_name1 }}" width="100%" /></td>
                     <td width="75%" class="text-justify" style="padding-left: 10px;">{!! $s->description3 !!}</td>
                 </tr>
                 @empty
@@ -294,7 +294,7 @@
     <div class="row">
         <div class="col page">
             <div class='head'>CHECKPOINT</div>
-            <div class='chkpoint'><img src="./assets/bgs/{{ $strength->img_name2 }}" class="img-fluid" width="20%" /></div>
+            <div class='chkpoint'><img src="./assets/img/bgs/{{ $strength->img_name2 }}" class="img-fluid" width="20%" /></div>
             <p>Here are some things to watch out for…</p>
             <div style="margin-top: -50px;">
                 <p>{!! $strength->description1 !!}</p>
