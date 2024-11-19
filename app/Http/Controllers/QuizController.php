@@ -114,7 +114,7 @@ class QuizController extends Controller
             $chart = $this->generateChart($quiz);
             $chart = base64_encode(file_get_contents($chart));
             $data = ['name' => $quiz->name];
-            $data = ['rid' => encrypt($quiz->id)];
+            $data['rid'] = encrypt($quiz->id);
             /*$data['report'] = Pdf::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus', 'desc'));*/
             Mail::to($quiz->email)->send(new ReportEmail($data));
             /*$data1 = array('name' => $quiz->name, 'email' => $quiz->email, 'strength' => $strength->outcome, 'ffg' => $outcome->label, 'score' => $score, 'rid' => encrypt($quiz->id));
