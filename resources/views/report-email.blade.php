@@ -5,10 +5,10 @@ Thank you for making an investment in your future by taking the Lifestyle Design
 
 I know that YOU have something unique and brilliant to share with the world, and it would be my absolute privilege and delight to help you realise that!<br /><br />
 
-So, let’s see what the results reveal!<br><br>
+So, let’s see what the results reveal!<br /><br />
 
 <center>
-    <a href="http://andrew.lifestyledesignquiz.com/report/$rid" style="border-radius: 10%; text-align: center; color: #fff; padding: 15px 0 15px 0; background-color: #00004B; width: 30%;">VIEW MY REPORT</a>
+    <a href="http://andrew.lifestyledesignquiz.com/report/{{$rid}}" style="border-radius: 50%; text-align: center; color: #fff; padding: 15px 50px 15px 50px; background-color: #00004B; width: 30%; text-decoration: none;">VIEW MY REPORT</a>
 </center>
 
 Sincere regards,<br>
