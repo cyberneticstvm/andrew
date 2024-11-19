@@ -7,14 +7,15 @@ $(function(){
         $("#progressModal").modal();
     });
 
-    /*$(document).on("click", ".btn-finish", function(){
-        if($('[name=g-recaptcha-response]').val() && $('[name=name]').val() && $('[name=email]').val()){
+    $(document).on("click", ".btn-finish", function(){
+        $(this).closest('form').submit();
+        /*if($('[name=g-recaptcha-response]').val() && $('[name=name]').val() && $('[name=email]').val()){
             $(this).closest('form').submit();
         }else if(!$('[name=g-recaptcha-response]').val()){
             alert('Please verify the Captcha!');
             return false;
-        }
-    });*/
+        }*/
+    });
 });
 
 function checkForm(div, itype){
