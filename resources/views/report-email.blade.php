@@ -8,7 +8,7 @@ I know that YOU have something unique and brilliant to share with the world, and
 So, let’s see what the results reveal!<br><br>
 
 <center>
-    <a href="http://andrew.lifestyledesignquiz.com/report/{{ $rid }}" style="border-radius: 10%; text-align: center; color: #fff; padding: 15px 0 15px 0; background-color: #00004B; width: 30%;">VIEW MY REPORT</a>
+    <a href="http://andrew.lifestyledesignquiz.com/report/$rid" style="border-radius: 10%; text-align: center; color: #fff; padding: 15px 0 15px 0; background-color: #00004B; width: 30%;">VIEW MY REPORT</a>
 </center>
 
 Sincere regards,<br>
