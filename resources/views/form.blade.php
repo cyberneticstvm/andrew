@@ -172,9 +172,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!--<div class="col-sm-12 col-sm-offset-4 mt-3">
-                                                    <div class="g-recaptcha mt-4" data-sitekey={{ config('services.recaptcha.key' )}}></div>
-                                                </div>-->
+
                                             </div>
                                         </div>
                                     </div>
