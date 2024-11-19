@@ -117,7 +117,7 @@ class QuizController extends Controller
             $data['rid'] = encrypt($quiz->id);
             /*$data['report'] = Pdf::loadView('report', compact('quiz', 'strength', 'chart', 'questions', 'outcome', 'strengths', 'focus', 'desc'));*/
             Mail::to($quiz->email)->send(new ReportEmail($data));
-            /*$data1 = array('name' => $quiz->name, 'email' => $quiz->email, 'strength' => $strength->outcome, 'ffg' => $outcome->label, 'score' => $score, 'rid' => encrypt($quiz->id));
+            $data1 = array('name' => $quiz->name, 'email' => $quiz->email, 'strength' => $strength->outcome, 'ffg' => $outcome->label, 'score' => $score, 'rid' => encrypt($quiz->id));
             Mail::send('output', $data1, function ($message) use ($score) {
                 if ($score >= 7):
                     $message->to($this->settings->gt_seven, 'Zapier');
@@ -127,7 +127,7 @@ class QuizController extends Controller
                 $message->from($this->settings->admin_email, $this->settings->admin_name);
                 $message->replyTo($this->settings->cc_email, $this->settings->cc_name);
                 $message->subject('Lifestyle Design quiz submission');
-            });*/
+            });
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage())->withInput($request->all());
         }
