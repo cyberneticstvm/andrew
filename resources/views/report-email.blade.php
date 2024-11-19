@@ -8,12 +8,13 @@ I know that YOU have something unique and brilliant to share with the world, and
 So, let’s see what the results reveal!<br /><br />
 
 <center>
-    <div class="" style="border-radius: 15%; text-align: center; padding: 15px 30px 15px 30px; background-color: #00004B;">
+    <div class="" style="width: 25%; text-align: center; padding: 15px 30px 15px 30px; background-color: #00004B;">
         <a href="http://andrew.lifestyledesignquiz.com/report/{{$rid}}" style="text-decoration: none; color: #fff; " target="_blank">VIEW MY REPORT</a>
     </div>
-
 </center>
-
+<br /><br />
+Note: <i>Please copy and paste the button link in a browser to view the report if the link click is not redirecting.</i>
+<br /><br />
 Sincere regards,<br>
 <img src="http://andrew.lifestyledesignquiz.com/public/assets/img/signature.jpg" width="100" /><br><br>
 <img src="http://andrew.lifestyledesignquiz.com/public/assets/img/andrewlord-new-logo-email.png" width="35%" />
