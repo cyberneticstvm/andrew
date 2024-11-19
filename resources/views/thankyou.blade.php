@@ -22,7 +22,7 @@ $strength = Session::get('strength');
   <style>
     .bg {
       background: linear-gradient(0deg, rgba(20, 22, 25, 0.7), rgba(13, 110, 253, 25%)),
-      url("{{ $strength?->img_name ? asset('/assets/bgs/'.$strength?->img_name) : '' }}");
+      url("{{ $strength?->img_name ? asset('/assets/img/bgs/'.$strength?->img_name) : '' }}");
       background-size: cover;
       background-repeat: no-repeat;
       font-family: 'Raleway', sans-serif;
@@ -100,7 +100,7 @@ $strength = Session::get('strength');
     </div>
     <div class="row">
       <div class="col-lg-12 text-center fb mb-5">
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ 'https://lifestyledesignquiz.com/projects/andrew/public/assets/bgs/'.$strength?->img_name1 }}&t=LifestyleDesignQuiz" target="_blank"><img src="{{ asset('/assets/img/facebook-share-icon.png') }}" class='img-fluid' /></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ 'https://lifestyledesignquiz.com/projects/andrew/public/assets/img/bgs/'.$strength?->img_name1 }}&t=LifestyleDesignQuiz" target="_blank"><img src="{{ asset('/assets/img/facebook-share-icon.png') }}" class='img-fluid' /></a>
       </div>
     </div>
     <div class="row">
