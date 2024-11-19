@@ -172,7 +172,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
+                                                <div class="col-sm-12 col-sm-offset-4 mt-3">
+                                                    <div class="g-recaptcha mt-4" data-sitekey={{ config('services.recaptcha.key' )}}></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -180,7 +182,7 @@
                                 <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next' value='Next' />
-                                        <button type='button' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish'>Finish</button>
+                                        <button type='submit' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish'>Finish</button>
                                     </div>
                                     <div class="pull-left">
                                         <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
