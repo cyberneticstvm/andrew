@@ -8,5 +8,5 @@ I know that YOU have something unique and brilliant to share with the world, and
 So, let’s see what the results reveal!<br /><br />
 
 Sincere regards,<br>
-<img src="http://andrew.lifestyledesignquiz.com/public/assets/img/signature.jpg" width="100" /><br><br>
-<img src="http://andrew.lifestyledesignquiz.com/public/assets/img/andrewlord-new-logo-email.png" width="35%" />
+<img src="https://lifestyledesignquiz.com/public/assets/img/signature.jpg" width="100" /><br><br>
+<img src="https://lifestyledesignquiz.com/public/assets/img/andrewlord-new-logo-email.png" width="35%" />

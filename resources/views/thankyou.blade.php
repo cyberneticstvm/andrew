@@ -100,7 +100,7 @@ $strength = Session::get('strength');
     </div>
     <div class="row">
       <div class="col-lg-12 text-center fb mb-5">
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ 'https://lifestyledesignquiz.com/projects/andrew/public/assets/img/bgs/'.$strength?->img_name1 }}&t=LifestyleDesignQuiz" target="_blank"><img src="{{ asset('/assets/img/facebook-share-icon.png') }}" class='img-fluid' /></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ 'https://lifestyledesignquiz.com/public/assets/img/bgs/'.$strength?->img_name1 }}&t=LifestyleDesignQuiz" target="_blank"><img src="{{ asset('/assets/img/facebook-share-icon.png') }}" class='img-fluid' /></a>
       </div>
     </div>
     <div class="row">
